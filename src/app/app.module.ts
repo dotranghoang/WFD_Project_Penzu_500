@@ -25,6 +25,7 @@ import { DiaryComponent } from './diary/diary.component';
 import { UserDiaryListComponent } from './user-diary-list/user-diary-list.component';
 import { DetailDiaryComponent } from './detail-diary/detail-diary.component';
 import { UpdateDiaryComponent } from './update-diary/update-diary.component';
+import { ViewAllTagComponent } from './view-all-tag/view-all-tag.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { UpdateDiaryComponent } from './update-diary/update-diary.component';
     UserDiaryListComponent,
     DetailDiaryComponent,
     UpdateDiaryComponent,
+    ViewAllTagComponent,
 
   ],
   imports: [

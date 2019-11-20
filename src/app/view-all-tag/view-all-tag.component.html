@@ -1,0 +1,106 @@
+
+<div class="text text-center">
+  <button type="button" class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#exampleModal2">
+    Add
+  </button>
+</div>
+
+  <!--Table-->
+  <table class="table table-striped">
+    <!--Table head-->
+    <thead>
+    <tr>
+      <td>#</td>
+      <th>Name</th>
+      <th>Edit/Delete</th>
+    </tr>
+    </thead>
+    <!--Table head-->
+    <!--Table body-->
+    <tbody>
+    <tr *ngFor="let tag of tagList, index as i">
+      <th scope="row">{{i}}</th>
+      <th>{{tag.name}}</th>
+      <td>
+        <button (click)="getId(tag.id)" type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal">
+          Edit
+        </button>&nbsp;
+        <button (click)="getId(tag.id)" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal1">
+          Delete
+        </button>
+      </td>
+    </tr>
+    <!--Table body-->
+  </table>
+  <!--Table-->
+
+
+
+  <!-- Modal Edit -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="tagForm" >
+        <div class="modal-body">
+          <input type="text"  formControlName="name">
+        </div>
+        <div class="modal-footer">
+          <button #closeModalRef type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="editTag(closeModalRef)" >Save changes</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Delete -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Delete</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="tagForm" >
+          <div class="modal-body">
+            <h5>Are you delete?</h5>
+          </div>
+          <div class="modal-footer">
+            <button #closeModalRef1 type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="deleteTag(closeModalRef1)" >Accept</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Add -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Add</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="tagForm" >
+          <div class="modal-body">
+            <input type="text"  formControlName="name">
+          </div>
+          <div class="modal-footer">
+            <button #closeModalRef2 type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="createTag(closeModalRef2)" >Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -12,6 +12,7 @@ import {UserDiaryListComponent} from './user-diary-list/user-diary-list.componen
 import {BlogMainComponent} from './blog-main/blog-main.component';
 import {DetailDiaryComponent} from './detail-diary/detail-diary.component';
 import {UpdateDiaryComponent} from './update-diary/update-diary.component';
+import {ViewAllTagComponent} from "./view-all-tag/view-all-tag.component";
 
 
 
@@ -51,6 +52,10 @@ const routes: Routes = [
       {
         path: 'updateDiary/:id' ,
         component: UpdateDiaryComponent
+      },
+      {
+        path: 'listAllTag',
+        component: ViewAllTagComponent
       }
     ]
   },
